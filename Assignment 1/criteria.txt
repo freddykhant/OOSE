@@ -1,0 +1,25 @@
+Criteria 2 - Appropriate Use of Containers
+Firstly, I choose to use an ArrayList to store all the lines of text in a file. This makes it easier for the 'Report' functionality, when searching through the file line by line to check for matching search criteria. This is efficiently done as each element in the list represents a line of text from the file.
+Secondly, I choose to also use an ArrayList of Entry objects to store the children of a Directory. This is because the children of a Directory can either be a FileEntry or Directory object, which implements the Entry interface. Hence generically storing Entry objects allows for both FileEntry and Directory objects to be children of the parent Directory.
+Lastly, I choose to use an ArrayList to store the search criteria (Criterion objects). This is because it must be linearly looped/search through for the 'Report' functionality to check if lines of text match the criteria in the list.
+
+Criteria 3 - Clear and Distinct Class/Interface/Method Responsibilities
+Each class and interface have their own separate and modularised purpose. 
+The TextFileSearcher is merely an application to perform the search and report functionality of the directory tree. 
+The Entry interface provides a template for the FileEntry and Directory objects, to each their own have separate functionality. 
+The FileEntry represents a file and has a list of contents (lines of text), while the Directory class represents a directory which has a list of chilren (sub-directories and more file entries). 
+The Criterion class represents a criterion object fields that specify the type of criteria. 
+And lastly, the OutputFormat is an enum object with two states, COUNT and SHOW. This represents what format the user wants to output from the search and report. Depending on the state of OutputFormat, the search and report will display the directory tree with a count of matching lines from search criteria (COUNT), or display te matching lines directly (SHOW).
+
+Criteria 4 - Appropriate Error Handling and Logging
+The Application handles external errors from user input without compromising the debugging of internal errors.
+The application also uses a number of logging statements inside catch blocks to report on the code's progress, and to catch Exceptions
+
+Criteria 5 - Appropriate Use of the Strategy Pattern and or Template Method Pattern
+I have not properly attempted to implement the Strategy or Template Method Pattern, due to time constraints. But had I more time, I aimed to implement the Strategy Pattern by creating an interface for 'Report' functionality, and Count and Show classes that implement the Report interface to perform the search and report algorithm differently to either count and display matching lines in tree or show matching lines in tree.
+
+Criteria 6 - Appropriate Use of the Composite Pattern
+I believe I have implemented the Composite Pattern to represent a file system structure.
+I created an interface Entry to act as a base component while the FileEntry and Directory classes act as composite objets that contain other Entry objects
+I designed the Directory class to have a list of FileSystemEntry objects called entries, which allows for addition, searching and retrieval of child entries in a recursive manner. This enables the creation of a hierarchical structure for representing directories and files within a file system.
+By implementing the composite pattern in this way, I have achieved the goal of representing a file system structure as a composite of directories and files, in a file system tree.

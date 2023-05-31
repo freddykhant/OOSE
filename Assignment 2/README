@@ -1,0 +1,16 @@
+ASSIGNMENT 2 README
+
+AUTHOR:
+
+Freddy Khant, 20618166
+
+USAGE:
+To run the program, use the following command:
+
+./gradlew run
+
+OUTPUT:
+The program generates an output on the console screen showing a simulation of the public transport system, particularly the Mandurah Train Line
+
+NOTES:
+Make sure to enter "cd code" in the command line to move to the program folder to run the program
